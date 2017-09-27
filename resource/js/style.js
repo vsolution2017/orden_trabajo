@@ -1,7 +1,6 @@
 $(function () {
 
-
-
+    
     $("#fechaInicio , #fechaCierre").change(function () {
         if ($("#fechaInicio").inputmask("isComplete") && $("#fechaCierre").inputmask("isComplete")) {
             var dateFechaInicio = $("#fechaInicio").val();
