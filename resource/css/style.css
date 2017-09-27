@@ -1,0 +1,15 @@
+.tab-content .tab-pane{
+    padding: 20px;
+}
+.bx{
+    outline: 1px blue solid;
+}
+
+#maquinaria_select .input-group,#mano_obra_select .input-group{
+ padding-top: 10px;
+}
+
+
+.actividad_sample .content .row{
+    padding-bottom: 10px; 
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="resource/bootstrap/content/bootstrap.min.css">
+        <link href="resource/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="resource/css/input_radio.css">
+        <link rel="stylesheet" href="resource/css/style.css">
+        <script src="resource/bootstrap/scripts/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="resource/bootstrap/scripts/bootstrap.min.js"></script>
+        <script src="resource/js/style.js"></script>
+        <script src="resource/js/jquery.inputmask.bundle.min.js"></script>
+        <script src="resource/js/moment.min.js"></script>
+        <title>Document</title>
+    </head>
+
+    <body>
+        <br><br>
+        <div id="exTab2" class="container">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_inicio" data-toggle="tab">Inicio</a>
+                </li>
+                <li >
+                    <a href="#tab_maquinaria" data-toggle="tab">Maquinaria</a>
+                </li>
+                <li >
+                    <a href="#tab_actividades" data-toggle="tab">Actividades</a>
+                </li>
+                <li><a href="#3" data-toggle="tab">Rubros</a>
+                </li>
+            </ul>
+            <div class="tab-content ">
+                <div class="tab-pane active" id="tab_inicio">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label  class="control-label">Nombre del solicitante:</label>
+                                        <select   class="form-control">
+                                            <option value="">Mantenimiento de redes(MR)</option>
+                                            <option value="">Guia Domiciliaria (GD)</option>
+                                            <option value="">Reparación Domiciliaria (RD)</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label  class="control-label">Nombre del solicitante:</label>
+                                        <input type="text" class="form-control" value="EPMAPAQ" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label  class="control-label">Fecha pedido: </label>
+                                        <input data-inputmask="'alias': 'date'" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label  class="control-label">Fecha planificada: </label>
+                                        <input data-inputmask="'alias': 'date'" class="form-control"/>                                    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label  class="control-label">Fecha inicio:</label>
+                                        <input data-inputmask="'alias': 'date'" class="form-control" id="fechaInicio"/>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label  class="control-label">Fecha cierre:</label>
+                                        <input data-inputmask="'alias': 'date'" class="form-control" id="fechaCierre"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <label  class="control-label">.</label>
+                                        <button class="btn btn-success" data-toggle="modal" data-target="#myModal" id="btn_hora" >Hora</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label  class="control-label">Jefe de area:</label>
+                                        <select   class="form-control">
+                                            <option value="">Ing. Francisco Bucheli</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label  class="control-label">Coord. Mant.:</label>
+                                        <select   class="form-control">
+                                            <option value="">Sr. Andres Benitez</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="control-label">Parroquia:</label>
+                                <input type="text" class="form-control" value="">
+                            </div>
+                            <div class="form-group">
+                                <label  class="control-label">Dirección:</label>
+                                <input type="text" class="form-control" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label  class="control-label">Descripción del problema:</label>
+                                <textarea  class="form-control"  rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_maquinaria">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label  class="control-label">Contratista: </label>
+                                    <select   class="form-control">
+                                        <option value="">Contratista 1</option>
+                                        <option value="">Contratista 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label  class="control-label">Maquinaria: </label>
+                                    <select id="cbo_maq"  class="form-control">
+                                        <option value="">Retroexcavadora</option>
+                                        <option value="">Martillo Neumatico</option>
+                                        <option value="">Volqueta</option>
+                                        <option value="">Grua en general</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label  class="control-label">.</label>
+                                    <button class="btn btn-success" id="btn_add_maq">Agregar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="maquinaria_select">
+                                    <div class="input-group hidden" id="op_add_maq">
+                                        <span class="input-group-addon" style="width: 150px;"></span>
+                                        <input type="text" class="form-control" placeholder="Cantidad">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label class="control-label">Mano de obra:</label>
+                                    <select id="cbo_mano_obra" class="form-control">
+                                        <option value="">Residente de obra</option>
+                                        <option value="">Maestro de obra</option>
+                                        <option value="">Ayudante</option>
+                                        <option value="">Albañil</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label class="control-label">.</label>
+                                    <button class="btn btn-success" id="btn_add_mano_obra">Agregar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="mano_obra_select">
+                                    <div class="input-group hidden" id="op_add_mano_obra">
+                                        <span class="input-group-addon" style="width: 150px;"></span>
+                                        <input type="text" class="form-control" placeholder="Cantidad">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="tab_actividades">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label  class="control-label">Tipo de Actividad:</label>
+                                <select  id="actividad" class="form-control">
+                                    <!--<option value="0">Seleccionar...</option>-->
+                                    <option value="1">Relleno</option>
+                                    <option value="2">Pavimento E</option>
+                                    <option value="3">Pavimento Acera</option>
+                                    <option value="4">Instalación de Adoquín</option>
+                                    <option value="5">Trabajo de Hormigón</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <label class="control-label ">.</label>
+                                <button class="btn btn-success" id="btn_add_activity" >Agregar</button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="actividad_sample">
+                            <div class="well well-sm">
+                                <div class="pull-right">
+                                    <button class="btn btn-success" name="btn_area" >Agregar</button>
+                                </div>
+
+                                <div class="pull-left">
+                                    <div class="buying-selling-group" id="buying-selling-group" data-toggle="buttons">
+                                        <label class="btn btn-default buying-selling">
+                                            <input type="checkbox" name="options" id="option1" autocomplete="off">
+                                            <span class="radio-dot"></span>
+                                            <span class="buying-selling-word">Normal</span>
+                                        </label>
+
+                                        <label class="btn btn-default buying-selling">
+                                            <input type="checkbox" name="options" id="option2" autocomplete="off">
+                                            <span class="radio-dot"></span>
+                                            <span class="buying-selling-word">Compactado</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <br>
+                                <div class="content">
+                                    <div class="row hidden op_add_area" >
+                                        <div class="col-md-2">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-danger delete" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                    <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                                </span>
+                                                <input type="text" class="form-control" value="Area" readonly>
+                                            </div><!-- /input-group -->
+                                        </div>
+                                        <div class="col-md-2"><input type="text" class="form-control"></div>
+                                        <div class="col-md-2"><input type="text" class="form-control"></div>
+                                        <div class="col-md-2"><input type="text" class="form-control"></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="actividad_sample">
+                            <div class="well well-sm">
+                                <div class="pull-right">
+                                    <button class="btn btn-success" name="btn_area" >Agregar</button>
+                                </div>
+
+                                <div class="pull-left">
+                                    <div class="buying-selling-group" id="buying-selling-group" data-toggle="buttons">
+                                        <label class="btn btn-default buying-selling">
+                                            <input type="radio" name="options" id="option1" autocomplete="off">
+                                            <span class="radio-dot"></span>
+                                            <span class="buying-selling-word">E= 20cm</span>
+                                        </label>
+
+                                        <label class="btn btn-default buying-selling">
+                                            <input type="radio" name="options" id="option2" autocomplete="off">
+                                            <span class="radio-dot"></span>
+                                            <span class="buying-selling-word">E= 15cm</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <br>
+                                <div class="content">
+                                    <div class="row hidden op_add_area" >
+                                        <div class="col-md-3">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-danger delete" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                    <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                                </span>
+                                                <input type="text" class="form-control" value="Area" readonly>
+                                            </div><!-- /input-group -->
+                                        </div>
+                                        <div class="col-md-2"><input type="text" class="form-control"></div>
+                                        <div class="col-md-2"><input type="text" class="form-control"></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="actividad_select">
+                                <div class="input-group hidden" id="op_add_act">
+                                    <span class="input-group-addon" style="width:170px;"></span>
+                                    <div class="col-md-3"><input type="text" class="form-control" placeholder="Area"></div>
+                                    <div class="col-md-3"><input type="text" class="form-control" placeholder="Cantidad"></div>
+                                    <div class="col-md-3"><input type="text" class="form-control" placeholder="Cantidad"></div>
+                                    <div class="col-md-3"><input type="text" class="form-control" placeholder="Cantidad"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Especificar horario de trabajo</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Generación automatica dependiendo de las fechas registradas</p>
+                        <div id="contenedor"></div>
+                        <div class="row hidden" id="opcionD">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label  class="control-label">Fecha:</label>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label  class="control-label">Hora Inicio</label>
+                                    <input type="time" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label  class="control-label">Hora Fin</label>
+                                    <input type="time" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Guardar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+
+</html>
