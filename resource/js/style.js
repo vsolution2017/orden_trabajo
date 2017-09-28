@@ -1,6 +1,5 @@
 $(function () {
 
-    
     $("#fechaInicio , #fechaCierre").change(function () {
         if ($("#fechaInicio").inputmask("isComplete") && $("#fechaCierre").inputmask("isComplete")) {
             var dateFechaInicio = $("#fechaInicio").val();
@@ -14,7 +13,6 @@ $(function () {
             var diffDays = (Number(delta) / 86400000) + 1;
             $("#contenedor").html("");
             for (var i = 0; i < diffDays; i++) {
-
                 var date = new Date(dateI);
                 var newdate = new Date(date);
                 newdate.setDate(newdate.getDate() + i);
@@ -24,8 +22,7 @@ $(function () {
                 $(op_clone).removeClass("hidden");
                 $("#contenedor").append(op_clone);
             }
-        }
-        else{
+        } else {
             $("#contenedor").html("");
         }
     });
@@ -33,26 +30,21 @@ $(function () {
     $(":input").inputmask();
 
     $("#btn_add_maq").click(function () {
-        maquina_nombre = $("#cbo_maq :selected").text();
-        op_clone = $("#op_add_maq").clone();
-        $(op_clone).find("button.disabled").html(maquina_nombre);
-        //$(op_clone).find("input").val(1);
-        $(op_clone).removeClass("hidden");
-        $("#maquinaria_select").append(op_clone);
+        ValidationMaquinaria("#cbo_maq :selected", "#maquinaria_select", "#op_add_maq", true);        
+    });
+    
+    $("#btn_save_hr").click(function () {
+                
     });
 
     $("#btn_add_mano_obra").click(function () {
-        mano_obra = $("#cbo_mano_obra :selected").text();
-        op_clone = $("#op_add_mano_obra").clone();
-        $(op_clone).find("button.disabled").html(mano_obra);
-        //$(op_clone).find("input").val(1);
-        $(op_clone).removeClass("hidden");
-        $("#mano_obra_select").append(op_clone);
+        ValidationMaquinaria("#cbo_mano_obra :selected", "#mano_obra_select", "#op_add_mano_obra", false);        
     });
 
-//tab_maquinaria
+    //tab_maquinaria
     $("#tab_maquinaria").on("click", ".delete", function () {
         $(this).closest(".input-group").remove();
+        OcultarPanelActividadCosto("#maquinaria_select",".maq_costo", ".maq_panel");
     });
 
     /* Carlos */
@@ -64,10 +56,11 @@ $(function () {
         $(this).closest(".actividad_sample").find(".content").append(op_area);
 
     });
-
+    
     $("#tab_actividades").on("click", ".delete", function () {
         $(this).closest(".row").remove();
     });
+    
     $("#tab_actividades").on("click", ".edit", function () {
         $(this).removeClass("btn-info");
         $(this).addClass("btn-success");
@@ -77,6 +70,7 @@ $(function () {
         $(this).removeClass("edit");
         $(this).addClass("save");
     });
+    
     $("#tab_actividades").on("click", ".save", function () {
         $(this).addClass("btn-info");
         $(this).removeClass("btn-success");
@@ -86,5 +80,59 @@ $(function () {
         $(this).addClass("edit");
         $(this).removeClass("save");
     });
-
 });
+
+function ValidationMaquinaria (param1, param2, param3, param4) {
+    maquina_nombre = $(param1).text();
+    op2_clone = $(param2).find("button.disabled").toArray();
+    for (var i = 0; i < op2_clone.length; i++) {
+        op3_clone = op2_clone[i].innerHTML;
+        if (maquina_nombre != op3_clone) {
+            band = true;
+        } else {
+            band = false;
+            break;
+        }
+    }
+    if (band) {
+        op_clone = $(param3).clone();
+        $(op_clone).find("button.disabled").html(maquina_nombre);
+        $(op_clone).removeClass("hidden");
+        $(param2).append(op_clone);
+    }
+    if(param4){
+        MostrarPanelActividadCosto(param2,".maq_costo", ".maq_panel");
+    }
+}
+
+function MostrarPanelActividadCosto(param1, param2, param3) {
+    op2_clone = $(param1).find("button.disabled").toArray();
+    for (var i = 0; i < op2_clone.length; i++) {
+        op3_clone = op2_clone[i].innerHTML;
+        if ((op3_clone == "Retroexcavadora") || (op3_clone == "Martillo Neumatico")) {
+            band = true; break;
+        } else {
+            band = false;
+        }
+    }
+    if(band){
+        $(param2).removeClass("hidden");
+        $(param3).removeClass("hidden");
+    }
+}
+
+function OcultarPanelActividadCosto(param1, param2, param3) {
+    op2_clone = $(param1).find("button.disabled").toArray();
+    for (var i = 0; i < op2_clone.length; i++) {
+        op3_clone = op2_clone[i].innerHTML;
+        if ((op3_clone == "Retroexcavadora") || (op3_clone == "Martillo Neumatico")) {
+            band = true; 
+        } else {
+            band = false;
+        }
+    }
+    if(!band){
+        $(param2).addClass("hidden");
+        $(param3).addClass("hidden");
+    }
+}
