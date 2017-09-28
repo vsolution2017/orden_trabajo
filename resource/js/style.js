@@ -33,12 +33,32 @@ $(function () {
         ValidationMaquinaria("#cbo_maq :selected", "#maquinaria_select", "#op_add_maq", true);        
     });
     
-    $("#btn_save_hr").click(function () {
-                
-    });
-
     $("#btn_add_mano_obra").click(function () {
         ValidationMaquinaria("#cbo_mano_obra :selected", "#mano_obra_select", "#op_add_mano_obra", false);        
+    });
+    
+    $("#btn_save_hr").click(function () {
+        hr_ini = $(".modal_horas").find("input.time_ini").toArray();
+        hr_fin = $(".modal_horas").find("input.time_fin").toArray();
+        c = hr_ini.length -1;
+        totalhora = 0;
+        totalmin = 0;
+        for (var i = 0; i < c; i++) {
+            hora_inicio = hr_ini[i].value;
+            hora_final = hr_fin[i].value;
+            var startTime=moment(hora_inicio, "HH:mm");
+            var endTime=moment(hora_final, "HH:mm");            
+            var totalHours = (endTime.diff(startTime, 'hours'));
+            var totalMinutes = endTime.diff(startTime, 'minutes');
+            var clearMinutes = totalMinutes % 60;
+            totalhora += totalHours;
+            totalmin += clearMinutes;
+        }
+        if(totalmin >= 60){
+            hora = totalhora + (totalmin/60);
+            minuto = totalmin % 60;
+        }
+        
     });
 
     //tab_maquinaria
