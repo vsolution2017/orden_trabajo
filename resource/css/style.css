@@ -13,3 +13,12 @@
 .actividad_sample .content .row{
     padding-bottom: 10px; 
 }
+
+.contenedor-area{
+    display: flex;
+    flex-flow: row wrap;
+}
+.contenedor-area input{
+    width: 20%;
+    margin: 0 10px;
+}
