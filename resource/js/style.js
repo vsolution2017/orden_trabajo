@@ -1,6 +1,25 @@
 $(function () {
+    /* Style Tab Actividades */
+    $("#tab_actividades").on("change", ".input-area", function () {
+        producto = 1;
+        $(this).closest('.contenedor-area').find(".input-area").each(function (i, value) {
+            num = parseFloat($(value).val());
+            if (num > 0) {
+                producto *= num;
+            }
+        });
+        $(this).closest('.contenedor-area').find(".total-area").val(producto.toFixed(2)).change();
+    });
+    $("#tab_actividades").on("change", ".total-area", function () {
+        sum = 0;
+        $(this).closest(".actividad_sample").find(".content .row:not(.hidden) .total-area").each(function (i, v_ta) {
+            sum += parseFloat($(v_ta).val());
+        });
+        $(this).closest(".actividad_sample").find(".v_total-area").val(sum.toFixed(2));
+    });
+    /* Style Tab Actividades */
 
-    
+
     $("#fechaInicio , #fechaCierre").change(function () {
         if ($("#fechaInicio").inputmask("isComplete") && $("#fechaCierre").inputmask("isComplete")) {
             var dateFechaInicio = $("#fechaInicio").val();
@@ -24,8 +43,7 @@ $(function () {
                 $(op_clone).removeClass("hidden");
                 $("#contenedor").append(op_clone);
             }
-        }
-        else{
+        } else {
             $("#contenedor").html("");
         }
     });
