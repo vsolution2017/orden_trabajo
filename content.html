@@ -36,13 +36,13 @@
         <br><br>
         <div id="exTab2" class="container">
             <ul class="nav nav-tabs">
-                <li class="active">
+                <li  class="active">
                     <a href="#tab_inicio" data-toggle="tab">Inicio</a>
                 </li>
                 <li>
                     <a href="#tab_maquinaria" data-toggle="tab">Maquinaria</a>
                 </li>
-                <li>
+                <li >
                     <a href="#tab_actividades" data-toggle="tab">Actividades</a>
                 </li>
                 <li>
@@ -184,14 +184,8 @@
                                             <button class="btn btn-success disabled" type="button" style="width: 150px;"></button>
                                         </span>
                                         <input type="text" class="form-control" style="width: 50px;" value="1" maxlength="2"/>
-                                    </div>
-                                    <div >                                       
-                                        <div class="col-md-2"><input type="text" class="form-control" required></div>
-                                        <div class="col-md-2"><input type="text" class="form-control" required></div>
-                                        <div class="col-md-2"><input type="text" class="form-control" required></div>
-                                    </div>                                     
+                                    </div>                                   
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -231,66 +225,149 @@
                     </div>                    
                     <div class="clearfix"></div>
                     <br>
-                    <div class="actividad_sample maq_panel hidden col-md-10" >
-                        <div class="well well-sm">
-                            <div class="pull-right">
-                                <button class="btn btn-success" name="btn_area" >Agregar</button>
-                            </div>
-                            <div class="pull-left">
-                                <div data-toggle="buttons">
-                                    <label class="btn btn-default buying-selling">
-                                        <input type="checkbox" name="options" id="opt1">
-                                        <span class="radio-dot"></span>
-                                        <span class="buying-selling-word">Gallineta</span>
-                                    </label>
-
-                                    <label class="btn btn-default buying-selling">
-                                        <input type="checkbox" name="options" id="opt2">
-                                        <span class="radio-dot"></span>
-                                        <span class="buying-selling-word">Bobcat</span>
-                                    </label>
+                    <div class="row actividad_sample">
+                        <div class="maq_panel hidden col-md-9">
+                            <div class="well well-sm">
+                                <div class="pull-right">
+                                    <button class="btn btn-success" name="btn_area" >Agregar</button>
                                 </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <br>
-                            <div class="content">
-                                <div class="row hidden op_add_area" >
-                                    <div class="col-md-3">
-                                        <div class="input-group">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-danger delete" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                                <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                            </span>
-                                            <input type="text" class="form-control" value="Area" readonly>
+                                <div class="pull-left">
+                                    <div data-toggle="buttons">
+                                        <label class="btn buying-selling">
+                                            <input type="checkbox" name="options" id="opt1">
+                                            <span class="radio-dot"></span>
+                                            <span class="buying-selling-word">Gallineta</span>
+                                        </label>
+
+                                        <label class="btn buying-selling">
+                                            <input type="checkbox" name="options" id="opt2">
+                                            <span class="radio-dot"></span>
+                                            <span class="buying-selling-word">Bobcat</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <br>
+                                <div class="content">
+                                    <div class="row hidden op_add_area" >
+                                        <div class="col-md-3 col-sm-3">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-danger delete" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                    <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                                </span>
+                                                <input type="text" class="form-control" value="Area" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="contenedor-area col-sm-8">
+                                            <input type="text" class="form-control" required>
+                                            <input type="text" class="form-control" required>
+                                            <input type="text" class="form-control" required>
+                                            <input type="text" class="form-control" readonly>
                                         </div>
                                     </div>
-                                    <div class="col-md-2"><input type="text" class="form-control" required></div>
-                                    <div class="col-md-2"><input type="text" class="form-control" required></div>
-                                    <div class="col-md-2"><input type="text" class="form-control" required></div>
-                                    <div class="col-md-2"><input type="text" class="form-control" readonly></div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="maq_costo_gall hidden well well-sm">
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-3">
+                                        <label class="control-label">Costo $/hr:</label>
+                                    </div>
+                                    <div class="col-md-7 col-sm-7">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                            </span>
+                                            <input type="text" class="costo_gallineta form-control" value="25" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <br>
+                                    <div class="col-md-5 col-sm-3">
+                                        <label class="control-label">T Gallineta:</label>
+                                    </div>
+                                    <div class="col-md-7 col-sm-7">
+                                        <input readonly type="text" class="maq_time_gall form-control v_total-area text-center">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <br>
+                                    <div class="col-md-5 col-sm-3">
+                                        <label class="control-label">Total:</label>
+                                    </div>
+                                    <div class="col-md-7 col-sm-7">
+                                        <input readonly type="text" class="total_gallineta text-center form-control">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <div class="maq_costo hidden col-md-2">
-                        <div class="well well-sm">
-                            <div class="content">
-                                <div class="well well-sm text-center">
-                                    <label class="control-label text-danger">Número de Viajes</label>
-                                    <div class="col-md-12" style="padding-bottom: 10px"><input type="text" class="form-control" data-toggle="tooltip" data-placement="bottom" title="Tiempo"></div>
-                                    <div class="input-group">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                        </span>
-                                        <input type="text" class="form-control" value="0.0" readonly>
-                                    </div>                                   
-                                </div>                                
-                                <div class="col-md-12"><input type="text" class="form-control" readonly></div>                                
+                            <div class="maq_costo_bobc hidden well well-sm">
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-3">
+                                        <label class="control-label">Costo $/hr:</label>
+                                    </div>
+                                    <div class="col-md-7 col-sm-7">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                            </span>
+                                            <input type="text" class="costo_bobcat form-control" value="31.25" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <br>
+                                    <div class="col-md-5 col-sm-3">
+                                        <label class="control-label">T Bobcat:</label>
+                                    </div>
+                                    <div class="col-md-7 col-sm-7">
+                                        <input readonly type="text" class="maq_time_bobc form-control v_total-area text-center">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <br>
+                                    <div class="col-md-5 col-sm-3">
+                                        <label class="control-label">Total:</label>
+                                    </div>
+                                    <div class="col-md-7 col-sm-7">
+                                        <input readonly type="text" class="total_bobcat text-center form-control">
+                                    </div>
+                                </div>
                             </div>
+                            <div class="maq_costo hidden well well-sm">
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-3">
+                                        <label class="control-label">Costo:</label>
+                                    </div>
+                                    <div class="col-md-7 col-sm-7">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                            </span>
+                                            <input type="text" class="costo_viajes form-control" value="12.98" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <br>
+                                    <div class="col-md-5 col-sm-3">
+                                        <label class="control-label">N° Viajes:</label>
+                                    </div>
+                                    <div class="col-md-7 col-sm-7">
+                                        <input readonly type="text" class="num_viaje form-control v_total-area text-center">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <br>
+                                    <div class="col-md-5 col-sm-3">
+                                        <label class="control-label">Total:</label>
+                                    </div>
+                                    <div class="col-md-7 col-sm-7">
+                                        <input readonly type="text" class="total_viajes text-center form-control">
+                                    </div>
+                                </div>
+                            </div>                                                                                    
                         </div>
-                    </div>                    
+                    </div>                             
                 </div>
+                
                 <div class="tab-pane" id="tab_actividades">
                     <div class="row">
                         <div class="col-md-4">
@@ -313,89 +390,95 @@
                             </div>
                         </div>
                         <div class="clearfix"></div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <div class="actividad_sample">
+                        <div class="row maq_panel actividad_sample">
+                            <div class="col-md-9">
+                                <div class="">
                                     <div class="well well-sm">
                                         <div class="pull-right">
                                             <button class="btn btn-success" name="btn_area" >Agregar</button>
+                                            <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                         </div>
+
                                         <div class="pull-left">
-                                            <label>
-                                                <span>RELLENO </span>
-                                            </label>
-                                            <div data-toggle="buttons">
-                                                <label class="btn btn-default buying-selling">
-                                                    <input type="checkbox" name="options" id="optNormal" >
+                                            <div class="buying-selling-group" id="buying-selling-group" data-toggle="buttons">
+                                                <label class="btn buying-selling">
+                                                    <input type="checkbox" name="options" id="option1" autocomplete="off">
                                                     <span class="radio-dot"></span>
                                                     <span class="buying-selling-word">Normal</span>
                                                 </label>
-                                                <label class="btn btn-default buying-selling">
-                                                    <input type="checkbox" name="options" id="optCompacto">
+
+                                                <label class="btn buying-selling">
+                                                    <input type="checkbox" name="options" id="option2" autocomplete="off">
                                                     <span class="radio-dot"></span>
                                                     <span class="buying-selling-word">Compactado</span>
-                                                </label>                                                
+                                                </label>
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>
                                         <br>
                                         <div class="content">
                                             <div class="row hidden op_add_area" >
-                                                <div class="col-md-3">
+                                                <div class="col-md-3 col-sm-3">
                                                     <div class="input-group">
                                                         <span class="input-group-btn">
                                                             <button class="btn btn-danger delete" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                                             <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                                                         </span>
                                                         <input type="text" class="form-control" value="Area" readonly>
-                                                    </div>
+                                                    </div><!-- /input-group -->
                                                 </div>
-                                                <div class="col-md-2"><input type="text" class="form-control" required></div>
-                                                <div class="col-md-2"><input type="text" class="form-control" required></div>
-                                                <div class="col-md-2"><input type="text" class="form-control" required></div>
-                                                <div class="col-md-2"><input type="text" class="form-control" readonly></div>
+                                                <div class="contenedor-area col-sm-8">
+                                                    <input type="text" class="form-control text-center input-area" required value="0.00">
+                                                    <input type="text" class="form-control text-center input-area" required value="0.00">
+                                                    <input type="text" class="form-control text-center input-area" required value="0.00">
+                                                    <input type="text" class="form-control text-center total-area"  value="0.00">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-3 ">
                                 <div class="well well-sm">
-                                    <div class="content">
-                                        <div class="well well-sm ">
-                                            <div class="col-md-12" style="padding-bottom: 10px;"><input type="text" class="form-control" placeholder="Area Total" data-toggle="tooltip" data-placement="bottom" title="Area Total"></div>
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-                                                    <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                                </span>
-                                                <input type="text" class="form-control" value="0.0" readonly>
-                                            </div>                                            
+                                    <div class="row">
+                                        <div class="col-md-5 col-sm-3">
+                                            <label class="control-label">Area Total:</label>
                                         </div>
-                                        <div class="col-md-12"><input type="text" class="form-control" readonly></div>                                
+                                        <div class="col-md-7 col-sm-7">
+                                            <input readonly value="0.00" type="text" class="form-control v_total-area text-center">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <br>
+                                        <div class="col-md-5 col-sm-3">
+                                            <label class="control-label">Costo:</label>
+                                        </div>
+                                        <div class="col-md-7 col-sm-7">
+                                            <input readonly value="0.00" type="text" class="text-center form-control">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <div class="actividad_sample">
+                        <div class="row actividad_sample">
+                            <div class="col-md-9">
+                                <div class="">
                                     <div class="well well-sm">
                                         <div class="pull-right">
                                             <button class="btn btn-success" name="btn_area" >Agregar</button>
+                                            <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                         </div>
+
                                         <div class="pull-left">
-                                            <label>
-                                                <span>PAVIMENTO </span>
-                                            </label>
-                                            <div data-toggle="buttons">
-                                                <label class="btn btn-default buying-selling">
-                                                    <input type="radio" name="options" id="optPav1">
+                                            <div class="buying-selling-group" id="buying-selling-group" data-toggle="buttons">
+                                                <label class="btn buying-selling">
+                                                    <input type="radio" name="options" id="option1" autocomplete="off">
                                                     <span class="radio-dot"></span>
                                                     <span class="buying-selling-word">E= 20cm</span>
                                                 </label>
-                                                <label class="btn btn-default buying-selling">
-                                                    <input type="radio" name="options" id="optPav2">
+
+                                                <label class="btn buying-selling">
+                                                    <input type="radio" name="options" id="option2" autocomplete="off">
                                                     <span class="radio-dot"></span>
                                                     <span class="buying-selling-word">E= 15cm</span>
                                                 </label>
@@ -405,41 +488,54 @@
                                         <br>
                                         <div class="content">
                                             <div class="row hidden op_add_area" >
-                                                <div class="col-md-3">
+                                                <div class="col-md-3 col-sm-3">
                                                     <div class="input-group">
                                                         <span class="input-group-btn">
                                                             <button class="btn btn-danger delete" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                                             <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                                                         </span>
                                                         <input type="text" class="form-control" value="Area" readonly>
-                                                    </div>
+                                                    </div><!-- /input-group -->
                                                 </div>
+                                                <div class="contenedor-area col-sm-8">
+                                                    <input type="text" class="form-control" required>
+                                                    <input type="text" class="form-control" required>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <!--<div class="col-md-2"><input type="text" class="form-control" required></div>
                                                 <div class="col-md-2"><input type="text" class="form-control" required></div>
-                                                <div class="col-md-2"><input type="text" class="form-control" required></div>
-                                                <div class="col-md-2"><input type="text" class="form-control" readonly></div>
+                                                <div class="col-md-2"><input type="text" class="form-control" readonly></div>-->
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
+
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <div class="well well-sm">
-                                    <div class="content">
-                                        <div class="well well-sm ">
-                                            <div class="col-md-12" style="padding-bottom: 10px;"><input type="text" class="form-control" placeholder="Area Total" data-toggle="tooltip" data-placement="bottom" title="Area Total"></div>
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-                                                    <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                                </span>
-                                                <input type="text" class="form-control" value="0.0" readonly>
-                                            </div>                                            
+                                    <div class="row">
+                                        <div class="col-md-5 col-sm-3">
+                                            <label class="control-label">Area Total:</label>
                                         </div>
-                                        <div class="col-md-12"><input type="text" class="form-control" readonly></div>                                
+                                        <div class="col-md-7 col-sm-7">
+                                            <input readonly type="text" class="form-control">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <br>
+                                        <div class="col-md-5 col-sm-3">
+                                            <label class="control-label">Costo:</label>
+                                        </div>
+                                        <div class="col-md-7 col-sm-7">
+                                            <input readonly value="0.00" type="text" class="text-center form-control">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
+
+
+
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -670,4 +766,5 @@
             </div>
         </div>
     </body>
+
 </html>

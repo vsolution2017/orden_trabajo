@@ -35,7 +35,7 @@ $(function () {
                 var date = new Date(dateI);
                 var newdate = new Date(date);
                 newdate.setDate(newdate.getDate() + i);
-                var fecha = newdate.getDate() + "-" + (newdate.getMonth() + 1) + "-" + newdate.getFullYear()
+                var fecha = newdate.getDate() + "-" + (newdate.getMonth() + 1) + "-" + newdate.getFullYear();
                 op_clone = $("#opcionD").clone();
                 $(op_clone).find("input[type='text']").val(fecha);
                 $(op_clone).removeClass("hidden");
@@ -74,16 +74,34 @@ $(function () {
             totalmin += clearMinutes;
         }
         if(totalmin >= 60){
-            hora = totalhora + (totalmin/60);
-            minuto = totalmin % 60;
+            totalhora = totalhora + (totalmin/60);
+            totalmin = totalmin % 60;
         }
+        costog = $(".maq_costo_gall").find("input.costo_gallineta").val();
+        costob = $(".maq_costo_bobc").find("input.costo_bobcat").val();
+        vtotal_g = CalcularTiempo(totalhora, totalmin, costog);
+        vtotal_b = CalcularTiempo(totalhora, totalmin, costob);
+        
+        if(totalhora.toString().length < 2){
+            totalhora = "0"+totalhora;
+        }
+        if(totalmin.toString().length < 2){
+            totalmin = "0"+totalmin;
+        }
+        time = totalhora+":"+totalmin;
+        $(".maq_costo_gall").find("input.maq_time_gall").val(time);
+        $(".maq_costo_gall").find("input.total_gallineta").val(vtotal_g);
+        
+        $(".maq_costo_bobc").find("input.maq_time_bobc").val(time);
+        $(".maq_costo_bobc").find("input.total_bobcat").val(vtotal_b);
         
     });
 
     //tab_maquinaria
     $("#tab_maquinaria").on("click", ".delete", function () {
         $(this).closest(".input-group").remove();
-        OcultarPanelActividadCosto("#maquinaria_select",".maq_costo", ".maq_panel");
+        index = $(this).closest(".input-group").find("button.disabled");
+        OcultarPanelActividadCosto("#maquinaria_select",".maq_costo", ".maq_panel", index);
     });
 
     /* Carlos */
@@ -126,7 +144,7 @@ function ValidationMaquinaria (param1, param2, param3, param4) {
     op2_clone = $(param2).find("button.disabled").toArray();
     for (var i = 0; i < op2_clone.length; i++) {
         op3_clone = op2_clone[i].innerHTML;
-        if (maquina_nombre != op3_clone) {
+        if (maquina_nombre !== op3_clone) {
             band = true;
         } else {
             band = false;
@@ -148,30 +166,74 @@ function MostrarPanelActividadCosto(param1, param2, param3) {
     op2_clone = $(param1).find("button.disabled").toArray();
     for (var i = 0; i < op2_clone.length; i++) {
         op3_clone = op2_clone[i].innerHTML;
-        if ((op3_clone == "Retroexcavadora") || (op3_clone == "Martillo Neumatico")) {
-            band = true; break;
-        } else {
-            band = false;
+        if ((op3_clone === "Retroexcavadora")) {
+            band = 1; 
+        } else  if(op3_clone === "Martillo Neumatico"){
+            band = 0;
+        }else{
+            band = -1;
         }
     }
-    if(band){
+    if(band === 1 || band === 0){
         $(param2).removeClass("hidden");
         $(param3).removeClass("hidden");
+        if(band === 1){
+            $(".maq_costo_gall").removeClass("hidden");   
+        }else{
+            $(".maq_costo_bobc").removeClass("hidden");   
+        }
     }
 }
 
-function OcultarPanelActividadCosto(param1, param2, param3) {
+function OcultarPanelActividadCosto(param1, param2, param3, param4) {
+    index = param4.text();
     op2_clone = $(param1).find("button.disabled").toArray();
-    for (var i = 0; i < op2_clone.length; i++) {
+    cont = op2_clone.length;
+    doble = 0;
+    for (var i = 0; i < cont; i++) {
         op3_clone = op2_clone[i].innerHTML;
-        if ((op3_clone == "Retroexcavadora") || (op3_clone == "Martillo Neumatico")) {
-            band = true; 
-        } else {
-            band = false;
+        if ((op3_clone === "Retroexcavadora") || (op3_clone === "Martillo Neumatico")) {
+            doble += 1; 
+        }
+        if ((index === "Retroexcavadora")) {
+            band = 1;
+        } else  if(index === "Martillo Neumatico"){
+            band = 0;
+        }else{
+            band = -1;
+        }
+    }  
+    if(band === -1){
+        if(cont === 1){
+            $(param2).addClass("hidden");
+            $(param3).addClass("hidden");
+            $(".maq_costo_bobc").addClass("hidden");
+            $(".maq_costo_gall").addClass("hidden");
+        }   
+    }else{
+        if((cont === 1  && doble <= 1) || (cont > 1  && doble === 0)){
+            $(param2).addClass("hidden");
+            $(param3).addClass("hidden");
+        }
+        if(band === 1){
+            $(".maq_costo_gall").addClass("hidden");   
+        }
+        if(band === 0){
+            $(".maq_costo_bobc").addClass("hidden");   
         }
     }
-    if(!band){
-        $(param2).addClass("hidden");
-        $(param3).addClass("hidden");
+}
+
+function CalcularTiempo(hora, minuto, costo) {
+    total =  0.00;
+    vhora = 0;
+    vmin = 0;
+    if(hora > 0){
+        vhora = parseFloat(hora * costo);
     }
+    if(minuto > 0){
+        vmin = parseFloat((costo * minuto)/0.6)/100;
+    }    
+    total = vhora + vmin;
+    return total.toFixed(2);
 }
