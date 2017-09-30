@@ -102,7 +102,7 @@
                                 <div class="col-md-1">
                                     <div class="form-group">
                                         <label  class="control-label" style="color:white;">.</label>
-                                        <button class="btn btn-success" data-toggle="modal" data-target="#myModal" id="btn_hora" >Hora</button>
+                                        <button class="btn btn-success" data-toggle="modal" data-target="#myModal" id="btn_hora" ><i class="fa fa-hourglass-3"></i> Hora</button>
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@
                             <div class="col-md-1">
                                 <div class="form-group">
                                     <label  class="control-label" style="color: white">.</label>
-                                    <button class="btn btn-success" id="btn_add_maq">Agregar</button>
+                                    <button class="btn btn-success" id="btn_add_maq"><i class="fa fa-plus"></i> Agregar</button>
                                 </div>
                             </div>
                         </div>
@@ -191,7 +191,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-9" style="margin-left: 10px;">
                                 <div class="form-group">
                                     <label class="control-label">Mano de obra:</label>
                                     <select id="cbo_mano_obra" class="form-control">
@@ -202,15 +202,15 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-1">
+                            <div class="col-md-3" style="margin-right: -10px;">
                                 <div class="form-group">
-                                    <label class="control-label" style="color: white">.</label>
-                                    <button class="btn btn-success" id="btn_add_mano_obra">Agregar</button>
+                                    <label class="control-label" style="color: white">.</label><br>
+                                    <button class="btn btn-success" id="btn_add_mano_obra"><i class="fa fa-plus"></i> Agregar</button>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12" style="margin-left: 10px;">
                                 <div id="mano_obra_select">
                                     <div class="input-group hidden" id="op_add_mano_obra">
                                         <span class="input-group-btn">
@@ -229,17 +229,17 @@
                         <div class="maq_panel hidden col-md-9">
                             <div class="well well-sm">
                                 <div class="pull-right">
-                                    <button class="btn btn-success" name="btn_area" >Agregar</button>
+                                    <button class="btn btn-success" name="btn_area" ><i class="fa fa-plus"></i></button>
                                 </div>
                                 <div class="pull-left">
                                     <div data-toggle="buttons">
-                                        <label class="btn buying-selling">
+                                        <label class="btn-gallineta btn buying-selling">
                                             <input type="checkbox" name="options" id="opt1">
                                             <span class="radio-dot"></span>
                                             <span class="buying-selling-word">Gallineta</span>
                                         </label>
 
-                                        <label class="btn buying-selling">
+                                        <label class="btn-bobcat btn buying-selling">
                                             <input type="checkbox" name="options" id="opt2">
                                             <span class="radio-dot"></span>
                                             <span class="buying-selling-word">Bobcat</span>
@@ -260,10 +260,10 @@
                                             </div>
                                         </div>
                                         <div class="contenedor-area col-sm-8">
-                                            <input type="text" class="form-control" required>
-                                            <input type="text" class="form-control" required>
-                                            <input type="text" class="form-control" required>
-                                            <input type="text" class="form-control" readonly>
+                                            <input type="text" class="form-control text-center input-area" required value="0.00">
+                                            <input type="text" class="form-control text-center input-area" required value="0.00">
+                                            <input type="text" class="form-control text-center input-area" required value="0.00">
+                                            <input type="text" class="form-control text-center total-area-viaje"  value="0.00" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -290,7 +290,7 @@
                                         <label class="control-label">T Gallineta:</label>
                                     </div>
                                     <div class="col-md-7 col-sm-7">
-                                        <input readonly type="text" class="maq_time_gall form-control v_total-area text-center">
+                                        <input readonly type="text" class="maq_time_gall form-control text-center">
                                     </div>
                                     <div class="clearfix"></div>
                                     <br>
@@ -321,7 +321,7 @@
                                         <label class="control-label">T Bobcat:</label>
                                     </div>
                                     <div class="col-md-7 col-sm-7">
-                                        <input readonly type="text" class="maq_time_bobc form-control v_total-area text-center">
+                                        <input readonly type="text" class="maq_time_bobc form-control text-center">
                                     </div>
                                     <div class="clearfix"></div>
                                     <br>
@@ -343,7 +343,7 @@
                                             <span class="input-group-btn">
                                                 <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                                             </span>
-                                            <input type="text" class="costo_viajes form-control" value="12.98" readonly>
+                                            <input type="text" class="costo_viajes form-control" value="12.00" readonly>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -352,7 +352,7 @@
                                         <label class="control-label">N° Viajes:</label>
                                     </div>
                                     <div class="col-md-7 col-sm-7">
-                                        <input readonly type="text" class="num_viaje form-control v_total-area text-center">
+                                        <input readonly type="text" class="num_viaje form-control text-center" value="0.00">
                                     </div>
                                     <div class="clearfix"></div>
                                     <br>
@@ -360,14 +360,14 @@
                                         <label class="control-label">Total:</label>
                                     </div>
                                     <div class="col-md-7 col-sm-7">
-                                        <input readonly type="text" class="total_viajes text-center form-control">
+                                        <input readonly type="text" class="total_viajes text-center form-control" value="0.00">
                                     </div>
                                 </div>
                             </div>                                                                                    
                         </div>
                     </div>                             
                 </div>
-                
+
                 <div class="tab-pane" id="tab_actividades">
                     <div class="row">
                         <div class="col-md-4">
@@ -386,29 +386,29 @@
                         <div class="col-md-1">
                             <div class="form-group">
                                 <label class="control-label " style="color: white">.</label>
-                                <button class="btn btn-success" id="btn_add_activity" >Agregar</button>
+                                <button class="btn btn-success" id="btn_add_activity" ><i class="fa fa-plus"></i> Agregar</button>
                             </div>
                         </div>
                         <div class="clearfix"></div>
-                        <div class="row maq_panel actividad_sample">
+                        <div class="row actividad_sample">
                             <div class="col-md-9">
                                 <div class="">
                                     <div class="well well-sm">
                                         <div class="pull-right">
-                                            <button class="btn btn-success" name="btn_area" >Agregar</button>
-                                            <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            <button class="btn-add-normal-compacto hidden btn btn-success " name="btn_area" ><i class="fa fa-plus"></i></button>
+                                            <button class="btn-dlt-normal-compacto hidden btn btn-danger "><i class="fa fa-trash"></i></button>
                                         </div>
 
                                         <div class="pull-left">
                                             <div class="buying-selling-group" id="buying-selling-group" data-toggle="buttons">
-                                                <label class="btn buying-selling">
+                                                <label class="btn-normal btn buying-selling">
                                                     <input type="checkbox" name="options" id="option1" autocomplete="off">
                                                     <span class="radio-dot"></span>
                                                     <span class="buying-selling-word">Normal</span>
                                                 </label>
 
-                                                <label class="btn buying-selling">
-                                                    <input type="checkbox" name="options" id="option2" autocomplete="off">
+                                                <label class="btn-compacto btn buying-selling">
+                                                    <input type="checkbox" name="optionsC" id="option2" autocomplete="off">
                                                     <span class="radio-dot"></span>
                                                     <span class="buying-selling-word">Compactado</span>
                                                 </label>
@@ -431,7 +431,7 @@
                                                     <input type="text" class="form-control text-center input-area" required value="0.00">
                                                     <input type="text" class="form-control text-center input-area" required value="0.00">
                                                     <input type="text" class="form-control text-center input-area" required value="0.00">
-                                                    <input type="text" class="form-control text-center total-area"  value="0.00">
+                                                    <input type="text" class="form-control text-center total-area"  value="0.00" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -443,6 +443,19 @@
                                 <div class="well well-sm">
                                     <div class="row">
                                         <div class="col-md-5 col-sm-3">
+                                            <label class="control-label">Costo:</label>
+                                        </div>
+                                        <div class="col-md-7 col-sm-7">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                                </span>
+                                                <input type="text" class="costo_relleno form-control" value="12.98" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <br>
+                                        <div class="col-md-5 col-sm-3">
                                             <label class="control-label">Area Total:</label>
                                         </div>
                                         <div class="col-md-7 col-sm-7">
@@ -451,10 +464,10 @@
                                         <div class="clearfix"></div>
                                         <br>
                                         <div class="col-md-5 col-sm-3">
-                                            <label class="control-label">Costo:</label>
+                                            <label class="control-label">Total:</label>
                                         </div>
                                         <div class="col-md-7 col-sm-7">
-                                            <input readonly value="0.00" type="text" class="text-center form-control">
+                                            <input readonly value="0.00" type="text" class="total-relleno text-center form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -465,19 +478,19 @@
                                 <div class="">
                                     <div class="well well-sm">
                                         <div class="pull-right">
-                                            <button class="btn btn-success" name="btn_area" >Agregar</button>
-                                            <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            <button class="btn-add-veinte-quince hidden btn btn-success" name="btn_area" ><i class="fa fa-plus"></i></button>
+                                            <button class="btn-dlt-veinte-quince hidden btn btn-danger"><i class="fa fa-trash"></i></button>
                                         </div>
 
                                         <div class="pull-left">
                                             <div class="buying-selling-group" id="buying-selling-group" data-toggle="buttons">
-                                                <label class="btn buying-selling">
+                                                <label class="btn-veinte btn buying-selling">
                                                     <input type="radio" name="options" id="option1" autocomplete="off">
                                                     <span class="radio-dot"></span>
                                                     <span class="buying-selling-word">E= 20cm</span>
                                                 </label>
 
-                                                <label class="btn buying-selling">
+                                                <label class="btn-quince btn buying-selling">
                                                     <input type="radio" name="options" id="option2" autocomplete="off">
                                                     <span class="radio-dot"></span>
                                                     <span class="buying-selling-word">E= 15cm</span>
@@ -498,13 +511,10 @@
                                                     </div><!-- /input-group -->
                                                 </div>
                                                 <div class="contenedor-area col-sm-8">
-                                                    <input type="text" class="form-control" required>
-                                                    <input type="text" class="form-control" required>
-                                                    <input type="text" class="form-control" required>
+                                                    <input type="text" class="form-control text-center input-area" required value="0.00">
+                                                    <input type="text" class="form-control text-center input-area" required value="0.00">
+                                                    <input type="text" class="form-control text-center total-area-pav"  value="0.00" readonly>
                                                 </div>
-                                                <!--<div class="col-md-2"><input type="text" class="form-control" required></div>
-                                                <div class="col-md-2"><input type="text" class="form-control" required></div>
-                                                <div class="col-md-2"><input type="text" class="form-control" readonly></div>-->
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>
@@ -516,26 +526,36 @@
                                 <div class="well well-sm">
                                     <div class="row">
                                         <div class="col-md-5 col-sm-3">
-                                            <label class="control-label">Area Total:</label>
+                                            <label class="control-label">Costo:</label>
                                         </div>
                                         <div class="col-md-7 col-sm-7">
-                                            <input readonly type="text" class="form-control">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-info edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                                </span>
+                                                <input type="text" class="costo_pavimento form-control" value="0.00" readonly>
+                                            </div>
                                         </div>
                                         <div class="clearfix"></div>
                                         <br>
                                         <div class="col-md-5 col-sm-3">
-                                            <label class="control-label">Costo:</label>
+                                            <label class="control-label">Area Total:</label>
                                         </div>
                                         <div class="col-md-7 col-sm-7">
-                                            <input readonly value="0.00" type="text" class="text-center form-control">
+                                            <input readonly value="0.00" type="text" class="v_total-area_pav form-control text-center">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <br>
+                                        <div class="col-md-5 col-sm-3">
+                                            <label class="control-label">Total:</label>
+                                        </div>
+                                        <div class="col-md-7 col-sm-7">
+                                            <input readonly value="0.00" type="text" class="total-pavimento text-center form-control">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -551,6 +571,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="tab-pane" id="tab_rubros">
                     <div class="row">
                         <div class="col-md-12">
@@ -719,7 +740,7 @@
                                     </table>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-success" data-dismiss="modal">Agregar</button>
+                                    <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-plus"></i> Agregar</button>
                                 </div>
                             </div>
                         </div>
@@ -760,7 +781,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal" id="btn_save_hr">Guardar</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="btn_save_hr"><i class="fa fa-save"></i> Guardar</button>
                     </div>
                 </div>
             </div>
